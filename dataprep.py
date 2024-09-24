@@ -69,7 +69,11 @@ print('-----------Starting AutoML-------------')
 from tpot import TPOTClassifier
 from sklearn.metrics import classification_report
 
-# TPOT AutoML classifier (optimize for 5 generations)
+# TPOT AutoML classifier (optimize for 5 generations - using genetic algorithm)
+#generations=5: The number of optimization cycles (generations) to run.
+#population_size=50: The number of pipelines to explore in each generation.
+#verbosity=2: Print detailed logs during execution.
+#random_state=42: Set a seed for reproducibility of results.
 tpot = TPOTClassifier(generations=5, population_size=50, verbosity=2, random_state=42)
 tpot.fit(X_train_preprocessed, y_train)
 
